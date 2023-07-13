@@ -27,9 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Evento para eliminar el último input
     eliminarInput.addEventListener('click', function() {
-        if (contadorInput > 0) {
+        if (contadorInput > 1) {
             inputDinamico.removeChild(inputDinamico.lastChild);
             contadorInput--;
+        } else {
+            // Si solo queda un input, también lo eliminamos
+            inputDinamico.innerHTML = '';
+            contadorInput = 0;
         }
     });
 
