@@ -13,7 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const input = document.createElement('input');
         input.type = 'text';
         input.name = `input${contadorInput}`;
-        input.placeholder = 'Ingrese un valor';
+        input.placeholder = 'Ingrese comentario';
+//agregamos estilo a los input
+        input.style.marginBottom = '10px';
+        input.style.padding = '15px';
+        input.style.border = '1px solid black';
 
         inputDinamico.appendChild(input);
 
