@@ -14,10 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         input.type = 'text';
         input.name = `input${contadorInput}`;
         input.placeholder = 'Ingrese comentario';
-//agregamos estilo a los input
-        input.style.marginBottom = '10px';
+        input.style.border = '2px solid black';
         input.style.padding = '15px';
-        input.style.border = '1px solid black';
+        input.style.marginBottom = '10px';
+        input.style.width = '100%';
+        input.style.borderRadius = '10px';
 
         inputDinamico.appendChild(input);
 
@@ -29,41 +30,42 @@ document.addEventListener('DOMContentLoaded', function() {
         createInput();
     });
 
-    // Evento para eliminar el último input
+// Evento para eliminar el último input
     eliminarInput.addEventListener('click', function() {
         if (contadorInput > 1) {
             inputDinamico.removeChild(inputDinamico.lastChild);
             contadorInput--;
         } else {
-            // Si solo queda un input, también lo eliminamos
+// Si solo queda un input, también lo eliminamos
             inputDinamico.innerHTML = '';
             contadorInput = 0;
         }
     });
 
-    // Evento para validar y enviar el formulario
+// Evento para validar y enviar el formulario
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
         let isValid = true;
 
-        // Verificar que todos los inputs estén llenos
-        const inputs = Array.from(inputDinamico.getElementsByTagName('input'));
-        inputs.forEach(function(input) {
-            if (input.value.trim() === '') {
-                isValid = false;
-                input.style.border = '1px solid red';
-            } else {
-                input.style.border = '';
-            }
-        });
+// Verificar que todos los inputs estén llenos
+const inputs = Array.from(inputDinamico.getElementsByTagName('input'));
+inputs.forEach(function(input) {
+    if (input.value.trim() === '') {
+        isValid = false;
+        input.style.outline = '2px solid red';
+    } else {
+        input.style.outline = '';
+    }
+});
+
 
         if (isValid) {
             // Enviar el formulario
-            alert('Formulario enviado exitosamente!');
+            alert('Su peticion fue enviada exitosamente!');
             form.reset();
         } else {
-            alert('Por favor, complete todos los campos.');
+            alert('Complete el formulario, sino elimine la casilla vacia!');
         }
     });
 });
