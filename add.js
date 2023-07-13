@@ -5,6 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputDinamico = document.getElementById('inputDinamico');
     const agregarInput = document.getElementById('agregarInput');
     const eliminarInput = document.getElementById('eliminarInput');
+    const h1Element = document.querySelector('h1');
+    h1Element.style.color = 'blue';
+    h1Element.style.fontFamily = 'Arial';
+    h1Element.style.fontSize = '40px';
+    h1Element.style.backgroundColor = 'black';
+    h1Element.style.color = 'white';
+    h1Element.style.textAlign = 'center';
+
+
+// Puedes agregar más estilos según tus preferencias
+
 
     let contadorInput = 0;
 
@@ -19,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         input.style.marginBottom = '10px';
         input.style.width = '100%';
         input.style.borderRadius = '10px';
+        input.style.marginTop = '20px';
+        
 
         inputDinamico.appendChild(input);
 
